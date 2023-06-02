@@ -12,6 +12,7 @@ EXPOSE 8000
 ARG DEV=false
 RUN  pip install --upgrade pip && \
      pip install -r /tmp/requirements.txt && \
+     apk add --update --no-cache postgresql-client libpq && \
      apk add --no-cache --virtual .build-deps \
     gcc \
     python3-dev \
